@@ -1,0 +1,98 @@
+/*CABECERA DEL SITIO****************************************************************************** */
+#cabecera {
+    grid-area: encabezado;
+    background-color: #003366;
+    padding: 15px;
+    margin: 0 2px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+  }
+
+  .cab2 {
+    color: #FFFFFF;
+    font-family: "Kanit", sans-serif;
+  }
+
+/*Configuracion del grid****************************************************************************** */
+
+.contenedor{
+    margin-top: 90px; 
+    max-width: 1000px;  
+     margin: 0 auto;
+    text-align: center;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 300px 100px;
+   grid-template-areas:none
+  
+
+}
+
+.titulo{
+    color: #174978;
+    font: oblique bold 270% cursive;
+    line-height: 100%;
+    text-align: center;
+    
+}
+
+.texto{
+  text-align: left;
+  color: #000000;
+}
+
+.image{
+  text-align: center;
+}
+
+.grid-container {
+     margin-top: 60px;
+     margin-bottom: 55px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual tamaño */
+    grid-template-rows: repeat(2, 370px); /* Crea 3 filas de altura fija de 100px */
+    gap: 10px; /* Espacio entre las celdas */
+    
+}
+
+.item {
+    background-color: #FFFFFF;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-style: groove;
+    border-radius: 10px;
+    border-color: #174978;
+}
+
+
+.titulo1{
+    color: #003366;
+    font: oblique bold 150% cursive;
+
+}
+
+.mexicana{
+  
+  max-width: 180px;
+  background-size:cover;
+    
+}
+
+.btnsucess{
+    background-color: #75A2BF;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+   
+    
+  }
