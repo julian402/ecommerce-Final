@@ -1,0 +1,73 @@
+header {
+    grid-area: header;
+    background-color: #002f6c;
+    justify-content: space-between;
+    padding: 10px;
+    color: white;
+    width: 100%;
+  }
+  
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    margin: 0px;
+    border-radius: 10px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 70px;
+  }
+  .icon-button {
+    background-color: #75a2bf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .icon-button:hover {
+    background-color: #556699;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .icon-buttonR {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .icon-heart:before {
+    content: "\f004";
+  }
+  
+  .icon-cart:before {
+    content: "\f07a";
+  }
+  
+  .icon-user:before {
+    content: "\f007";
+  }
+  
+  .icon-buttonR:hover {
+    color: #f0a500;
+  }
+
+  @media screen and (max-width: 760px) {
+    .buttons {
+      gap: 20px;
+    }
+    
+  }
