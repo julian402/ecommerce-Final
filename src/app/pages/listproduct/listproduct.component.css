@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Sans+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: "Averia Sans Libre", sans-serif;
+}
+
+
+main {
+  margin: 10px auto;
+  max-width: 1250px;
+}
+
+main .first {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+}
+
+main .first section {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px;
+}
+
+main .first section #search{
+  align-self: center;
+  display: flex;
+}
+
+main .first section #search input {
+  width: 480px;
+  background-color: #75A2BF;
+  text-align: center;
+  color: white;
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius:  10px;
+  padding: 10px;
+}
+
+main .first section #search button {
+  background-color: #75A2BF;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: none;
+}
+
+main .first section #search button:active {
+  border: 2px solid #003366;
+}
+
+main .first section #search button img {
+  max-width: 30px;
+}
+
+main .first section .second {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px 15px;
+}
+
+
+main .first aside {
+  grid-column: span 1;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #2F5F8A;
+  color: white;
+  border-radius: 20px;
+}
+
+main .first aside h2{
+  text-decoration: underline;
+}
+
+main .first aside label{
+  display: block;
+}
+
+main .first aside select{
+  border-radius: 5px;
+  padding: 2px;
+  color: #003366;
+}
+
+main .first aside #fil-precio{
+  display: flex;
+  max-width: 80%;
+  gap: 5px;
+}
+
+main .first aside #fil-precio input{
+  max-width: 50%;
+  padding: 2px;
+  border-radius: 5px;
+  color: black;
+}
+
+@media screen and (max-width: 760px) {
+
+  header nav ul li{
+    margin: 10px auto;
+  }
+
+  main .first section .second {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto;
+  }
+
+  main .first section #search input {
+    width: 280px;}
+}
+
+@media screen and (max-width: 580px) {
+  main .first {
+    display: grid;
+    grid-template-columns: minmax(0, auto) minmax(0, auto) minmax(0, auto);
+  }
+ 
+ 
+ 
+  main .first aside {
+    visibility: hidden;
+    grid-column: span 1;
+  }
+  
+  
+  main .first section .second {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+  }
+}
