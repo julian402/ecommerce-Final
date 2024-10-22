@@ -23,6 +23,13 @@ header {
     display: flex;
     gap: 70px;
   }
+
+  .icons a {
+    text-decoration: underline;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
   .icon-button {
     background-color: #75a2bf;
     color: white;
