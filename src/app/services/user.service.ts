@@ -13,9 +13,6 @@ export class UserService {
   }
 
   login(datosDelUsuario: { email: string; password: string }) {
-    return this.http.post(
-      'http://localhost:3000/api/users/login',
-      datosDelUsuario
-    );
+    return this.http.post('http://localhost:3000/api/login', datosDelUsuario);
   }
 }
