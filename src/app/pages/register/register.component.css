@@ -47,11 +47,13 @@ input[type="password"] {
 }
 
 input[type="file"] {
-  width: 60%;
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  color: #000;
+  color: black;
+  padding-bottom: 5px;
+  background-color: white;
 }
   .form-submit {
     margin-top: 20px;
@@ -85,10 +87,6 @@ input[type="file"] {
     
   }
   
-  a:hover{
-    color: white;
-    text-decoration: underline;
-  }
-
-
-
+.formVisibility{
+  display: none;
+}
