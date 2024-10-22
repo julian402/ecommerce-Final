@@ -26,7 +26,7 @@ export class RegisterComponent {
     name: new FormControl('', {
       validators: [Validators.required],
     }),
-    lastname: new FormControl('', {
+    lastName: new FormControl('', {
       validators: [Validators.required],
     }),
     email: new FormControl('', {
@@ -38,6 +38,10 @@ export class RegisterComponent {
     avatar: new FormControl(null, {
       validators: [Validators.required],
     }),
+    typeUser: new FormControl('Customer', {
+      validators: [Validators.required],
+    }),
+   
   });
 
   onFileChange(event: any) {
@@ -69,11 +73,12 @@ export class RegisterComponent {
     if (this.registerForm.valid && this.avatar) {
       const formData = this.toFormData(this.registerForm.value);
       this.userService.register(formData).subscribe({
-        next: (response) => {
+        next: response => {
+          console.log(response)
           console.log('Se ha registrado un usuario');
           this.router.navigate(['/login']);
         },
-        error: (error) => {
+        error: error => {
           console.error(error);
         },
       });
