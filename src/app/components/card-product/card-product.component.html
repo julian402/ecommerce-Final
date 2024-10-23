@@ -1,17 +1,17 @@
 <article class="productCard">
-  <img class="img" [src]="imagen" alt="" />
-  <h2>{{ name }}</h2>
-  <p>{{ brand }}</p>
-  <h3>{{ price | currency }}</h3>
+  @if(product?.images?.length !== 0){<img class="img" [src]="product?.images?.[0]" alt="" />}
+  <h2>{{ product?.name }}</h2>
+  <p>{{ product?.brand }}</p>
+  <h3>{{ product?.price | currency }}</h3>
   <div>
     <ul>
       <li>
         <button><img src="HeartBlue.png" alt="" /></button>
       </li>
       <li>
-        <button><img src="ShopCartBlue.svg" alt="" /></button>
+        <button (click)="handlerAddCart(product)"><img src="ShopCartBlue.svg" alt="" /></button>
       </li>
     </ul>
-    <button routerLink="{{ '/detail/' + id }}">Ver Mas</button>
+    <button routerLink="{{ '/detail/' + product?._id }}">Ver Mas</button>
   </div>
 </article>

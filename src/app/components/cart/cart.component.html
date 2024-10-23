@@ -1,0 +1,16 @@
+<aside [ngClass]="cartVisibility() ? 'cart cartshow' : 'cart'">
+    <div class="first">
+    <h2>Carrito</h2>
+    <button class="close" (click)="handleCartClick()">X</button>
+</div>
+    <section class="products">
+@for(product of cart().values();track product._id){
+        <app-cart-products [product]="product"/>
+    }
+
+    </section>
+    <div class="comprar">
+        <h3>Total <span>$ xxxxxxxx</span></h3>
+        <button class="button-comprar">Comprar</button>
+    </div>
+</aside>

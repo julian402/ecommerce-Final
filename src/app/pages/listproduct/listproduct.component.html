@@ -10,11 +10,7 @@
         <p>Loading...</p>
         } @else { @for (product of products(); track product?._id) {
         <app-card-product
-          [id]="product._id"
-          [name]="product.name"
-          [brand]="product.brand"
-          [price]="product.price"
-          [imagen]="product.images[0]"
+        [product]="product"
         />
         } }
       </div>
