@@ -7,21 +7,22 @@ import { RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CartProductsComponent,CommonModule,RouterLinkWithHref,CurrencyPipe],
+  imports: [
+    CartProductsComponent,
+    CommonModule,
+    RouterLinkWithHref,
+    CurrencyPipe,
+  ],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrl: './cart.component.css',
 })
 export class CartComponent {
-private cartService = inject(CartService);
-cart = this.cartService.products
-cartVisibility = this.cartService.cardVisibility
+  private cartService = inject(CartService);
+  cart = this.cartService.products;
+  cartVisibility = this.cartService.cardVisibility;
+  total = this.cartService.Total;
 
-
-handleCartClick(){
-  this.cartService.visibilityCart()
-}
-
-
-
-
+  handleCartClick() {
+    this.cartService.visibilityCart();
+  }
 }

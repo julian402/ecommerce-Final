@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 import { DetailComponent } from './pages/detail/detail.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,4 +16,5 @@ export const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
   },
+  { path: 'checkout', component: CheckoutComponent },
 ];

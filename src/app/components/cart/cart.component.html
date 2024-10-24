@@ -9,7 +9,9 @@
     }
   </section>
   <div class="comprar">
-    <h3>Total <span>$ xxxxxxxx</span></h3>
-    <button class="button-comprar">Comprar</button>
+    <h3>
+      Total <span> {{ total() | currency }}</span>
+    </h3>
+    <button class="button-comprar" routerLink="/checkout">Comprar</button>
   </div>
 </aside>
