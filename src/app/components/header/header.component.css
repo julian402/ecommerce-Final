@@ -72,6 +72,12 @@ header {
     color: #f0a500;
   }
 
+  .icon-buttonLogout :before{
+    content: "\f057";
+  }
+
+
+
   @media screen and (max-width: 760px) {
     .buttons {
       gap: 20px;

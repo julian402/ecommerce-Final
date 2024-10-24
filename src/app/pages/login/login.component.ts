@@ -8,6 +8,7 @@ import {
 import { HeaderComponent } from '../../components/header/header.component';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   private userService = inject(UserService);
   private router = inject(Router);
+  private authService = inject(AuthService);
 
   loginForm = new FormGroup({
     email: new FormControl('', {
@@ -36,7 +38,8 @@ export class LoginComponent {
         .subscribe({
           next: (response: any) => {
             console.log(response);
-            localStorage.setItem('token', response.token);
+            this.authService.setToken(response.token);
+            // localStorage.setItem('token', response.token);
             this.router.navigate(['/']);
           },
           error: (error: any) => {

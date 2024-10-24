@@ -3,22 +3,39 @@
     <img src="/Logo tienda.png" alt="Logo" class="logo" />
     <div class="buttons">
       <button class="icon-button" routerLink="">Inicio</button>
-      <button class="icon-button" routerLink="{{'/products'}}">Productos</button>
+      <button class="icon-button" routerLink="{{ '/products' }}">
+        Productos
+      </button>
       <button class="icon-button">Categorias</button>
       <button class="icon-button">Ofertas</button>
     </div>
     <div class="icons">
-     
-      <a routerLink="register">Registrate</a>
-   
+      <a *ngIf="!isLogged()" routerLink="register">Registrate</a>
       <button class="icon-buttonR" aria-label="Favoritos">
         <i class="fas fa-heart"></i>
       </button>
-      <button class="icon-buttonR" aria-label="Carrito">
+      <button
+        class="icon-buttonR"
+        aria-label="Carrito"
+        (click)="handleCartClick()"
+      >
         <i class="fas fa-shopping-cart"></i>
       </button>
-      <button class="icon-buttonR" aria-label="Perfil de usuario" routerLink="login">
+      <button
+        *ngIf="!isLogged()"
+        class="icon-buttonR"
+        aria-label="Perfil de usuario"
+        routerLink="login"
+      >
         <i class="fas fa-user"></i>
+      </button>
+      <button
+        *ngIf="isLogged()"
+        class="icon-buttonLogout"
+        aria-label="Perfil de usuario"
+        (click)="logout()"
+      >
+        <i class="fa-thin fa-circle-xmark"></i>
       </button>
     </div>
   </div>

@@ -1,3 +1,4 @@
+import { DOCUMENT } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 
@@ -6,6 +7,8 @@ import { Injectable, inject } from '@angular/core';
 })
 export class UserService {
   private http = inject(HttpClient);
+  private document = inject(DOCUMENT);
+  localStorage = this.document.defaultView?.localStorage;
   constructor() {}
 
   register(formData: FormData) {
@@ -14,5 +17,13 @@ export class UserService {
 
   login(datosDelUsuario: { email: string; password: string }) {
     return this.http.post('http://localhost:3000/api/login', datosDelUsuario);
+  }
+
+  isLogged() {
+    if (localStorage.getItem('user_token')) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
