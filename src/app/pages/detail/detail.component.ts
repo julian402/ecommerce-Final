@@ -1,6 +1,7 @@
 import { Component, Input, inject, signal } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import Product from '../../../../types/Product';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-detail',
@@ -11,6 +12,7 @@ import Product from '../../../../types/Product';
 })
 export class DetailComponent {
   productService = inject(ProductService);
+  cartService = inject(CartService);
   @Input() id: string = '';
 
   product = signal<null | Product>(null);
@@ -19,12 +21,16 @@ export class DetailComponent {
     console.log('Este es el detalle', this.id);
     this.productService.getOneProduct(this.id).subscribe({
       next: (response: any) => {
-        console.log(response);
+        // console.log(response);
         this.product.set(response);
       },
       error: (error: any) => {
         console.log(error);
       },
     });
+  }
+
+  handlerAddCart(product:any){
+    this.cartService.addCart(product)
   }
 }

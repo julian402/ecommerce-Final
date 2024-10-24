@@ -1,0 +1,18 @@
+<section class="containerCart">
+  <div>
+    <img [src]="product?.images?.[0]" alt="" />
+  </div>
+  <div>
+    <h2>{{ product?.name }}</h2>
+    <p>{{ product?.price | currency }}</p>
+
+    <div class="buttonCarts">
+      <div class="buttonQuanty">
+        <button>-</button>
+        <input type="text" />
+        <button>+</button>
+      </div>
+      <button class="buttonDelete"><i class="fa-solid fa-trash"></i></button>
+    </div>
+  </div>
+</section>
