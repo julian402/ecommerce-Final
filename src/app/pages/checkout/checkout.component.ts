@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, HostListener } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import {
   FormControl,
@@ -29,8 +29,28 @@ export class CheckoutComponent {
   private ordenService = inject(OrdenService);
   private router = inject(Router);
 
+  isVisible = false;
+
+  constructor() {
+    this.cartService.isVisible$.subscribe((visible) => {
+      this.isVisible = visible;
+    });
+  }
+
   products = this.cartService.products;
   total = this.cartService.Total;
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const cartElement = document.getElementById('cart-container');
+    if (cartElement && !cartElement.contains(event.target as Node)) {
+      this.cartService.hideCart();
+    }
+  }
+
+  hide() {
+    this.cartService.hideCart();
+  }
 
   paymentDetails = new FormGroup({
     address: new FormControl(''),

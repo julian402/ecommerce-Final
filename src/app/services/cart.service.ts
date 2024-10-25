@@ -1,13 +1,17 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { computed, inject, Injectable, signal } from '@angular/core';
 import Product from '../../../types/Product';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  constructor() {}
+  constructor(private snackBar: MatSnackBar) {}
   private http = inject(HttpClient);
+  private isVisible = false;
+  private isVisibleSubject = new BehaviorSubject<boolean>(false);
 
   products = signal(new Map());
   cardVisibility = signal(false);
@@ -23,6 +27,12 @@ export class CartService {
 
   visibilityCart() {
     this.cardVisibility.update((value) => !value);
+  }
+
+  isVisible$ = this.isVisibleSubject.asObservable();
+
+  hideCart() {
+    this.cardVisibility.set(false);
   }
 
   addCart(product: Product) {
@@ -41,6 +51,16 @@ export class CartService {
 
       console.log('El carrito actualizado es:', newProductsMap.values());
       return newProductsMap;
+    });
+
+    this.showNotification('Producto agregado al carrito');
+  }
+
+  showNotification(message: string) {
+    this.snackBar.open(message, 'Cerrar', {
+      duration: 1000,
+      horizontalPosition: 'right',
+      verticalPosition: 'top',
     });
   }
 
