@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+CU:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+CU:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,173 +9,200 @@
 
 /*propiedades del body****************************************************************************** */
 body {
-  
   height: 100vh; /* Viewport height */
-
-  
 }
 
 /*CABECERA DEL SITIO****************************************************************************** */
 
-
 /*Configuracion del grid****************************************************************************** */
 
-.contenedor{
-    margin-top: 90px; 
-    max-width: 1000px;  
-     margin: 0 auto;
-    text-align: center;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 300px 100px;
-   grid-template-areas:none
-  
-
+.contenedor {
+  margin-top: 90px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 300px 100px;
+  grid-template-areas: none;
 }
-.catalogos{
-  margin-top: 90px; 
-    max-width: 1200px;  
-     margin: 0 auto;
-     text-align: left;
- 
-  
+.catalogos {
+  margin-top: 90px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+  align-self: center;
 }
 
-.infocatalogo{
-  margin: 80px;
+.infocatalogo {
+  margin: 20px;
   background-image: url("/entranamiento.png");
-  text-align: center;   
-  background-color: #FFFFFF ;
+  background-position-x: -90px;
+  text-align: center;
+  background-color: #ffffff;
   border-radius: 15px;
 
   background-repeat: no-repeat;
-  border-right: 15px solid #000000 ;
+  border-right: 15px solid #000000;
   border-style: groove;
-  width: 1060px;
-  height: 570px;
-   font-size: 25px;
-   
-  
-  
- 
+  max-width: 900px;
+  max-height: 570px;
+  min-height: 450px;
+  font-size: 25px;
+  opacity: 0.85;
 }
 
-.titulo2{
-  color:  #FFFFFF;  
-  
+.titulo2 {
+  color: #ffffff;
+
   justify-content: left;
-   align-items: center;
-   gap: 25px;
-  
-   /* Specific Gap */
-   row-gap: 25px;
-   column-gap: 75px;
-   
-   /* Or shorthand */
-   gap: 25px 75px; 
- 
-   place-items: center;
-   border-radius: 15px;
-   font-family: cursive;
-  
+  align-items: center;
+  gap: 25px;
+
+  /* Specific Gap */
+  row-gap: 25px;
+  column-gap: 75px;
+
+  /* Or shorthand */
+  gap: 25px 75px;
+
+  place-items: center;
+  border-radius: 15px;
+  font-family: cursive;
 }
-.titulocatalogo{
+.titulocatalogo {
   text-align: center;
   font-family: cursive;
-  font-size:30px;
-  color: #003266
+  font-size: 30px;
+  color: #003266;
 }
 
-.button{
-  background-color: #04AA6D;
-  border: none;
+
+button{
+  background-color: #002f6c;
   color: white;
-  padding: 5px 15px;
-  text-align: left;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 10px;
-  
-  
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .grid-container {
   display: grid;
   position: static;
   grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual tamaño */
-  grid-template-rows: repeat(3, 305px); /* Crea 3 filas de altura fija de 100px */
+  grid-template-rows: repeat(
+    3,auto
+  ); /* Crea 3 filas de altura fija de 100px */
   gap: 10px; /* Espacio entre las celdas */
-  background-color: #FFFFFF;
-  
+  background-color: #ffffff;
 }
 
 .item {
-  background-color:#FFFFFF;
-  color:#395cb5;
+  background-color: #ffffff;
+  color: #395cb5;
   text-align: center;
   padding: 10px;
   border-radius: 14px;
-  max-width: 1000;
+  max-width: max-content;
+  min-height: max-content;
   /*border-left: 9px solid #395cb5;*/
   /*border-right: 5px solid #003266 ;*/
   /*border-right: 5px solid  #395cb5;*/
   border-style: groove;
 }
 
-.estilomoda{
+.estilomoda {
   text-align: center;
   font-family: cursive;
-  font-size:40px;
+  font-size: 40px;
   color: #003266;
-  
 }
 
-.deportivo{
-  text-align:justify;
-  color:#395cb5;
+.deportivo {
+  text-align: justify;
+  color: #395cb5;
 
   font-family: "ArIaL", serif;
- 
 }
 
-.imagen:hover {filter: saturate(500%);
-  
+.imagen:hover {
+  filter: saturate(500%);
 }
-.imagen{
-  width:295px;
-  height:215px;
-  overflow:hidden;
+.imagen {
+  width: 295px;
+  height: 215px;
+  overflow: hidden;
 }
-.imagen .imagen{
-  width:100%;
-  height:auto
+.imagen .imagen {
+  width: 100%;
+  height: auto;
 }
 
-.titulo1{
-  color: #FFFFFF;
+.titulo1 {
+  color: #ffffff;
   font-family: cursive;
   font-size: 500x;
 }
 
-.parrafo{
-  color: #FFFFFF;
-  text-align:right;
+.parrafo {
+  color: #ffffff;
+  text-align: right;
   font-size: medium;
   margin: 0.5rem 0.2rem;
   letter-spacing: 2px;
 }
 
-.parrafo1{
-
-  color: #FFFFFF;
-  text-align:right;
+.parrafo1 {
+  color: #ffffff;
+  text-align: right;
   font-size: medium;
   margin: 0.5rem 0.2rem;
   letter-spacing: 15px;
 }
 
-.list{
+.list {
   color: #003266;
+}
+
+@media screen and (max-width: 800px){
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto;
+  }
+
+  .infocatalogo{
+    background-position-x: -230px;
+    
+  }
+
+  .infocatalogo .parrafo p {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.parrafo1 .parrafo p{
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+}
+
+@media screen and (max-width: 500px){
+  .grid-container {
+    margin: 0 auto;
+    grid-template-columns: repeat(1, 1fr); 
+    grid-template-rows: auto;
+  }
+
+  .item {
+    margin: 0 auto;
+  }
+
+  .infocatalogo .parrafo p {
+      font-size: 10px;
+      letter-spacing: 1px;
+  }
+
+  .parrafo1 .parrafo p{
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
 }

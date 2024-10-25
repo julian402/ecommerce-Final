@@ -17,7 +17,7 @@ section.payment {
 }
 
 .product{
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     display: flex;
     flex-direction: column;
 }
@@ -31,13 +31,27 @@ section.payment form .formGroup label {}
 section.payment form .formGroup input {}
 section.payment form .formGroup select {}
 section.payment form button[type='submit'] {
-    width: 100%;
+    width: 70%;
     margin-top: 20px;
     border: none;
     border-radius: 0.2rem;
     padding: 0.4rem 0.8rem;
     background-color: rgb(39, 71, 255);
     color: white;
+}
+
+.payment label {
+    margin-top: 10px;
+}
+
+.payment input{
+    width: 70%;
+}
+
+.payment select{
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 section.cart {
@@ -116,4 +130,12 @@ section.cart .product .actions form button.decrement {
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+    main{
+        flex-direction: column;
+        gap:10px
+    }
+    
 }

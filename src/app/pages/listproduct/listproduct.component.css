@@ -108,7 +108,7 @@ main .first aside #fil-precio input{
   color: black;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 830px) {
 
   header nav ul li{
     margin: 10px auto;

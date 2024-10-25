@@ -5,6 +5,9 @@ header {
     padding: 10px;
     color: white;
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
   
   .nav-bar {
@@ -21,7 +24,7 @@ header {
   
   .buttons {
     display: flex;
-    gap: 70px;
+    gap: 50px;
   }
 
   .icons a {
@@ -73,7 +76,15 @@ header {
   }
 
   .icon-buttonLogout :before{
-    content: "\f057";
+    content: "\f2f5";
+  }
+
+  .icon-buttonLogout{
+    background-color: #002f6c;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
   }
 
 

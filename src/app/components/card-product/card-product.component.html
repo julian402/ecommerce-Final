@@ -1,5 +1,6 @@
 <article class="productCard">
   @if(product?.images?.length !== 0){<img class="img" [src]="product?.images?.[0]" alt="" />}
+  <div class="detail">
   <h2>{{ product?.name }}</h2>
   <p>{{ product?.brand }}</p>
   <h3>{{ product?.price | currency }}</h3>
@@ -14,4 +15,5 @@
     </ul>
     <button routerLink="{{ '/detail/' + product?._id }}">Ver Mas</button>
   </div>
+</div>
 </article>

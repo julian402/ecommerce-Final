@@ -18,6 +18,7 @@ cartService = inject(CartService);
   products = signal<null | Product[]>(null);
 
   ngOnInit() {
+    window.scrollTo(0,0)
     this.productService.getAllProducts().subscribe({
       next: (response: any) => {
         // console.log(response);

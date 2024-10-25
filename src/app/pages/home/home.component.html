@@ -1,5 +1,5 @@
 <div class="contenedor">
-  <header class="header">
+  <section class="header">
     <h1 class="estilomoda">Dejanos ser parte de tu estilo</h1>
     <br />
 
@@ -40,7 +40,7 @@
       height="300"
       alt=""
     />
-  </header>
+  </section>
   <h2 class="estilomoda">Elige lo que deseas</h2>
 
   <img
@@ -77,19 +77,23 @@
   <h1 class="estilomoda">Lo Mas Vendido y Destacado</h1>
   <br />
   <div class="grid-container">    
+    @if(products() === null) {
+      <p>Loading...</p>
+      } @else { @for (product of products(); track product?._id) {
     <div class="item">
      
       <ul class="lista">
-        <h3 class="list">Guayos</h3>        
-        <p class="list">Valor $200.000</p>
-        <p class="list">Talla Disponible 40.41.42.43.44.45</p>
-        <p class="list">Envíos a domicilio 🏠 paga al recibir</p>
+        <h3 class="list">{{product.name}}</h3>        
+        <p class="list">Valor {{product.price}}</p>
+        <p class="list">Talla Disponible @for(size of product.size; track size){
+          {{size}}}</p>
       </ul>      
       <a class="imagen" href=" "
-        ><img src="./guayos.png" width="245" height="190" alt=""
+        ><img [src]="product?.images?.[0]" width="245" height="190" alt=""
       /></a>
-    </div>
-    <div class="item">
+      <button routerLink="{{'/products'}}">Ver mas</button>
+    </div>}}
+    <!-- <div class="item">
       <ul class="lista">
         <h3 class="list">Tenis NewBalance</h3>
         <p class="list">Valor $520.000</p>
@@ -162,5 +166,5 @@
           height="190"
           alt=""
       /></a>
-  </div>
+  </div> -->
 

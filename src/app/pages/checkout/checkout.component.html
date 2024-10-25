@@ -1,8 +1,19 @@
 <main>
+  <section class="cart">
+    <h2>Carrito</h2>
+    <div class="product">
+      @for(product of products().values(); track product._id) {
+      <app-cart-products [product]="product" />
+      }
+    </div>
+    <h2>
+      Total <span> {{ total() | currency }}</span>
+    </h2>
+  </section>
   <section class="payment">
     <h2>Detalles del pago</h2>
     <form action="" (submit)="onSubmit()" [formGroup]="paymentDetails">
-      <div class="formGroup">
+      <!-- <div class="formGroup">
         <label for="address">Direccion</label>
         <input
           type="text"
@@ -10,7 +21,7 @@
           id="address"
           formControlName="address"
         />
-      </div>
+      </div> -->
       <div class="formGroup">
         <label for="paymentMethod">Metodo de Pago</label>
         <select
@@ -25,16 +36,5 @@
       </div>
       <button type="submit">Realizar compra</button>
     </form>
-  </section>
-  <section class="cart">
-    <h2>Carrito</h2>
-    <div class="product">
-      @for(product of products().values(); track product._id) {
-      <app-cart-products [product]="product" />
-      }
-    </div>
-    <h2>
-      Total <span> {{ total() | currency }}</span>
-    </h2>
   </section>
 </main>

@@ -6,8 +6,8 @@
       <button class="icon-button" routerLink="{{ '/products' }}">
         Productos
       </button>
-      <button class="icon-button">Categorias</button>
-      <button class="icon-button">Ofertas</button>
+      <!-- <button class="icon-button">Categorias</button>
+      <button class="icon-button">Ofertas</button> -->
     </div>
     <div class="icons">
       <a *ngIf="!isLogged()" routerLink="register">Registrate</a>
@@ -35,7 +35,7 @@
         aria-label="Perfil de usuario"
         (click)="logout()"
       >
-        <i class="fa-thin fa-circle-xmark"></i>
+        <i class="fas fa-solid fa-right-from-bracket"></i>
       </button>
     </div>
   </div>
