@@ -22,14 +22,12 @@ section.payment {
     flex-direction: column;
 }
 
-section.payment form {}
+
 section.payment form .formGroup {
     display: flex;
     flex-direction: column
 }
-section.payment form .formGroup label {}
-section.payment form .formGroup input {}
-section.payment form .formGroup select {}
+
 section.payment form button[type='submit'] {
     width: 70%;
     margin-top: 20px;
@@ -89,9 +87,6 @@ section.cart .product figure figcaption {
     flex-grow: 1;
 }
 
-section.cart .product figure figcaption h3 {}
-
-section.cart .product figure figcaption {}
 
 section.cart .product .actions {
     height: 100%;
@@ -103,7 +98,7 @@ section.cart .product .actions {
     right: 0;
 }
 
-section.cart .product .actions button.delete {}
+
 
 section.cart .product .actions form {
     display: flex;
