@@ -106,6 +106,7 @@ main .first aside #fil-precio input{
   padding: 2px;
   border-radius: 5px;
   color: black;
+  
 }
 
 @media screen and (max-width: 830px) {
@@ -125,12 +126,12 @@ main .first aside #fil-precio input{
 }
 
 @media screen and (max-width: 580px) {
+
   main .first {
     display: grid;
     grid-template-columns: minmax(0, auto) minmax(0, auto) minmax(0, auto);
+    
   }
- 
- 
  
   main .first aside {
     visibility: hidden;
@@ -142,5 +143,6 @@ main .first aside #fil-precio input{
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto;
+    margin: 0 auto;
   }
 }

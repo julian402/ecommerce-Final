@@ -33,6 +33,7 @@ aside h2 {
 
 aside .first button{
     padding: 5px;
+    height: fit-content;
 }
 
 aside .comprar{
@@ -42,6 +43,7 @@ aside .comprar{
 aside .comprar h3{
     color: black;
     margin-top: 10px;
+    font-size: 20px;
 }
 
 aside .comprar span{
@@ -58,4 +60,8 @@ button{
 
 .products{
     overflow-y: scroll;
+}
+
+button .close{
+    font-size: 25px;
 }

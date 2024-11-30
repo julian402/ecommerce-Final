@@ -64,7 +64,11 @@
 
 .sizes-grid button:hover {
     background-color: #f0f0f0;
+    border-color: blue;
 }
+
+
+
 
 .size-guide {
     text-decoration: none;
