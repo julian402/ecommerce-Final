@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 import { OrdenService } from '../../services/orden.service';
 import { CartProductsComponent } from '../../components/cart-products/cart-products.component';
 import { CurrencyPipe } from '@angular/common';
+import Swal from 'sweetalert2'
+import { response } from 'express';
 
 @Component({
   selector: 'app-checkout',
@@ -60,7 +62,12 @@ export class CheckoutComponent {
   onSubmit() {
     if (this.products().size >= 1 && this.paymentDetails.valid) {
       this.ordenService.createOrder(this.paymentDetails.value).subscribe({
-        next: () => this.router.navigate(['']),
+        next: (response: any) => {
+        Swal.fire('Orden Generada y enviada', response.message,'success');
+          this.router.navigate([''])},
+          error: (error)=>{
+            Swal.fire('No se pudo generar la orden', error.message,'error')
+          }
       });
     }
   }

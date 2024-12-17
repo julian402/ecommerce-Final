@@ -9,6 +9,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -40,9 +41,11 @@ export class LoginComponent {
             console.log(response);
             this.authService.setToken(response.token);
             // localStorage.setItem('token', response.token);
+            Swal.fire('Se ha Logeado','','success')
             this.router.navigate(['/']);
           },
           error: (error: any) => {
+            Swal.fire('No se pudo Logear',error.error.error,'error')
             console.error(error);
           },
         });

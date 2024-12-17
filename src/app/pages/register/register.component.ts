@@ -8,11 +8,12 @@ import {
 import { HeaderComponent } from '../../components/header/header.component';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, HeaderComponent],
+  imports: [ReactiveFormsModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
@@ -75,10 +76,12 @@ export class RegisterComponent {
       this.userService.register(formData).subscribe({
         next: response => {
           console.log(response)
+          Swal.fire('Se ha registrado un usuario','','success')
           console.log('Se ha registrado un usuario');
           this.router.navigate(['/login']);
         },
         error: error => {
+          Swal.fire('Error en el registro','Valide la informacion ingresada','error')
           console.error(error);
         },
       });
