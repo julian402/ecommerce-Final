@@ -21,7 +21,7 @@ export class RegisterComponent {
   private userService = inject(UserService);
   private router = inject(Router);
 
-  avatar: File | null = null;
+  avatar: null | File = null;
 
   registerForm = new FormGroup({
     name: new FormControl('', {
@@ -42,13 +42,13 @@ export class RegisterComponent {
     typeUser: new FormControl('Customer', {
       validators: [Validators.required],
     }),
+   
   });
 
   onFileChange(event: any) {
     const file = event.target.files[0];
     if (file) {
       this.avatar = file;
-      this.registerForm.controls['avatar'].setValue(file); // Asignar el archivo al formulario
     }
   }
 
@@ -76,12 +76,12 @@ export class RegisterComponent {
       this.userService.register(formData).subscribe({
         next: response => {
           console.log(response)
-          Swal.fire('Se ha registrado un usuario', '', 'success')
+          Swal.fire('Se ha registrado un usuario','','success')
           console.log('Se ha registrado un usuario');
           this.router.navigate(['/login']);
         },
         error: error => {
-          Swal.fire('Error en el registro', 'Valide la informacion ingresada', 'error')
+          Swal.fire('Error en el registro','Valide la informacion ingresada','error')
           console.error(error);
         },
       });
