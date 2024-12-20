@@ -1,0 +1,74 @@
+<main>
+  <div class="first">
+    <section>
+      <article id="search">
+        <input type="search" name="search" placeholder="Buscar Producto ..." />
+        <button><img src="Group 1.svg" alt="" /></button>
+      </article>
+      <div class="second">
+        @if(products() === null) {
+        <p>Loading...</p>
+        } @else { @for (product of products(); track product?._id) {
+        <app-card-product
+        [product]="product"
+        />
+        } }
+      </div>
+    </section>
+    <aside>
+      <section id="ordenar">
+        <h2>Ordenar</h2>
+        <div>
+          <label>Por</label>
+          <select name="orden" id="orden">
+            <option value="">más relevante</option>
+            <option value="">menor precio</option>
+            <option value="">mayor precio</option>
+          </select>
+        </div>
+      </section>
+      <section id="filtrar">
+        <h2>Filtrar</h2>
+        <div>
+          <label>Marca</label>
+          <select name="Marca" id="Marca">
+            <option selected="True" disabled="disabled">
+              Seleccione la marca
+            </option>
+            <option value="">Adidas</option>
+            <option value="">Nike</option>
+          </select>
+        </div>
+        <div>
+          <label>Talla</label>
+          <select name="Talla" id="Talla">
+            <option selected="True" disabled="disabled">
+              Seleccione la talla
+            </option>
+            <option value="">L</option>
+            <option value="">XL</option>
+          </select>
+        </div>
+        <div>
+          <label>Genero</label>
+          <select name="Genero" id="Genero">
+            <option selected="True" disabled="disabled">
+              Seleccione el genero
+            </option>
+            <option value="">Hombre</option>
+            <option value="">Mujer</option>
+            <option value="">Niño</option>
+            <option value="">Niña</option>
+          </select>
+        </div>
+        <div>
+          <label>Precio</label>
+          <div id="fil-precio">
+            <input type="text" placeholder="precio-min" />
+            <input type="text" placeholder="precio-max" />
+          </div>
+        </div>
+      </section>
+    </aside>
+  </div>
+</main>

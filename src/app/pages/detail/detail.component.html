@@ -1,0 +1,55 @@
+<main>
+  @if(product() === null){
+  <p class="loading">Loading...</p>
+  } @else {
+  <div class="product-container">
+    <div class="image-section">
+      <img [src]="product()?.images?.[0]" alt="" />
+    </div>
+    <div class="details-section">
+      <h2 class="h2-details">{{ product()?.category?.name }}</h2>
+      <h1 class="h1-details">{{ product()?.name }}</h1>
+      <div class="size-selection">
+        <p>Selecciona tu talla</p>
+        <div class="sizes-grid">
+          @for(size of product()?.size; track size){
+          <button>{{ size }}</button>
+          }
+          <!-- <button>33</button>
+            <button>34</button>
+            <button>35</button>
+            <button>36</button>
+            <button>37</button>
+            <button>38</button>
+            <button>39</button>
+            <button>40</button>
+            <button>41</button>
+            <button>42</button>
+            <button>43</button>
+            <button>44</button>
+            <button>45</button> -->
+        </div>
+        <a href="#" class="size-guide">Guía de tallas</a>
+      </div>
+      <p class="price">{{ product()?.price | currency }}</p>
+
+      <!-- <div class="quantity">
+        <button (click)="decrement(id)">-</button>
+        <input type="text" [formControl]="cartQuantity" />
+        <button (click)="increment(id)">+</button>
+      </div> -->
+
+      <div class="buttons-details">
+        <button class="add-to-cart" (click)="handlerAddCart(product)">
+          AÑADIR AL CARRITO
+        </button>
+        <button class="buy-now" routerLink="/checkout">COMPRAR AHORA</button>
+      </div>
+
+      <p class="description">
+        {{ product()?.description }}
+      </p>
+    </div>
+  </div>
+  }
+</main>

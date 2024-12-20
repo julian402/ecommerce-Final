@@ -1,0 +1,62 @@
+*{
+    color:black
+}
+
+.containerCart{
+    display: flex;
+    padding: 5px;
+    margin-top: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+img {
+width: 150px;
+border-radius: 20px;
+}
+
+.containerCart h2{
+    font-size: 20px;
+    padding: 5px;
+}
+
+.containerCart p{
+    font-size: 10px;
+    padding: 5px;
+}
+
+.buttonCarts{
+    /* display: flex;
+    margin-top: 5px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Añade espacio entre los elementos */
+}
+
+.buttonQuanty{
+    display: flex;
+    align-items: center;
+}
+
+.buttonQuanty input{
+    width: 40px; 
+    text-align: center;
+}
+
+.buttonQuanty button{
+    width: 25px;
+}
+
+.containerCart i{
+    height: 5px;
+    color: #000;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

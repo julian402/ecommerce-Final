@@ -1,0 +1,53 @@
+<main>
+  <div class="form-container">
+    <h2>REGISTRO</h2>
+
+    <form [formGroup]="registerForm" (submit)="onSubmit()" enctype="multipart/form-data">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="name" formControlName="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="lastName" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="lastName" formControlName="lastName" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="password" formControlName="password" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="avatar" class="form-label">Avatar</label>
+          <input type="file" class="form-control" id="avatar" formControlName="avatar"
+            (change)="onFileChange($event)" />
+        </div>
+
+
+        <div class="form-group">
+          <div class="formVisibility">
+            <label for="typeUser" class="form-label">Tipo de usuario</label>
+            <input type="text" class="form-control" id="typeUser" formControlName="typeUser" value="Customer"
+              readonly />
+          </div>
+        </div>
+      </div>
+
+
+
+      <button type="submit" class="BotonRegister">Registrar</button>
+      <p>Ya tienes cuenta? <a href="/login">Iniciar Sesión</a></p>
+    </form>
+  </div>
+</main>

@@ -1,0 +1,40 @@
+<main>
+  <section id="cart-container" class="cart">
+    <h2>Carrito</h2>
+    <div class="product">
+      @for(product of products().values(); track product._id) {
+      <app-cart-products [product]="product" />
+      }
+    </div>
+    <h2>
+      Total <span> {{ total() | currency }}</span>
+    </h2>
+  </section>
+  <section class="payment">
+    <h2>Detalles del pago</h2>
+    <form action="" (submit)="onSubmit()" [formGroup]="paymentDetails">
+      <!-- <div class="formGroup">
+        <label for="address">Direccion</label>
+        <input
+          type="text"
+          name="address"
+          id="address"
+          formControlName="address"
+        />
+      </div> -->
+      <div class="formGroup">
+        <label for="paymentMethod">Metodo de Pago</label>
+        <select
+          name="paymentMethod"
+          id="paymentMethod"
+          formControlName="paymentMethod"
+        >
+          <option value="Credit_Card">Credit_Card</option>
+          <option value="PSE">PSE</option>
+          <option value="Mercado Pago">Mercado Pago</option>
+        </select>
+      </div>
+      <button type="submit">Realizar compra</button>
+    </form>
+  </section>
+</main>

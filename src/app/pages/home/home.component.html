@@ -1,0 +1,170 @@
+<div class="contenedor">
+  <section class="header">
+    <h1 class="estilomoda">Dejanos ser parte de tu estilo</h1>
+    <br />
+
+    <img
+      class="image"
+      src="./raya.png"
+      width="1000"
+      height="15"
+      alt=""
+    />
+    <br />
+    <br />
+    <img
+      class="ima"
+      src="./mujer1.png"
+      width="400"
+      height="300"
+      alt=""
+    />
+    <img
+      class="ima"
+      src="./hombrebasket.png"
+      width="400"
+      height="300"
+      alt=""
+    />
+    <img
+      class="ima"
+      src="./infantil.png"
+      width="400"
+      height="300"
+      alt=""
+    />
+    <img
+      class="ima"
+      src="./hombresport.png"
+      width="400"
+      height="300"
+      alt=""
+    />
+  </section>
+  <h2 class="estilomoda">Elige lo que deseas</h2>
+
+  <img
+    class="image"
+    src="./raya2.png"
+    width="420"
+    height="15"
+    alt=""
+  />
+</div>
+
+<section class="catalogos">
+  <nav class="infocatalogo">
+    <br />
+    <h1 class="titulo1">Mejora Tu Entrenamiento</h1>
+    <div class="parrafo">
+      <br />
+      <p>El mercado de la ropa deportiva está en expansión</p>
+      <p>cada vez más personas integan el ejercicio físico</p>
+      <p>en su vida diaria.Esto genera mayor demanda de</p>
+      <p>ropa que combine funcionalidad y estilo,en una</p>
+      <p>tendencia de moda urbana</p>
+    </div>
+    <br />
+    <div class="parrafo1">
+      <h2>ClotheSport</h2>
+      <div class="parrafo">
+        <p>Somos una tienda dedicada a la venta de ropa y</p>
+        <p>calzado deportivo,donde encontraras las mejores</p>
+        <p>marcas en zapatillas y gorras deportivas</p>
+      </div>
+    </div>
+  </nav>
+  <h1 class="estilomoda">Lo Mas Vendido y Destacado</h1>
+  <br />
+  <div class="grid-container">    
+    @if(products() === null) {
+      <p>Loading...</p>
+      } @else { @for (product of products(); track product?._id) {
+    <div class="item">
+     
+      <ul class="lista">
+        <h3 class="list">{{product.name}}</h3>        
+        <p class="list">Valor {{product.price}}</p>
+        <p class="list">Talla Disponible @for(size of product.size; track size){
+          {{size}}}</p>
+      </ul>      
+      <a class="imagen" href=" "
+        ><img [src]="product?.images?.[0]" width="245" height="190" alt=""
+      /></a>
+      <button routerLink="{{'/products'}}">Ver mas</button>
+    </div>}}
+    <!-- <div class="item">
+      <ul class="lista">
+        <h3 class="list">Tenis NewBalance</h3>
+        <p class="list">Valor $520.000</p>
+        <p class="list">Talla Disponible 18.43.35.40.41.39</p>
+        <p class="list">Envíos a domicilio 🏠 paga al recibir</p>
+      </ul>
+      <a class="imagen" href="../index2.html"
+        ><img
+          src="./newbalance1.png"
+          width="245"
+          height="190"
+          alt=""
+      /></a>
+    </div>
+    <div class="item">
+      <ul class="lista">
+        <h3 class="list">Gorras Nike</h3>
+        <p class="list">Valor $150.000</p>
+        <p class="list">Talla Disponible 18,12</p>
+        <p class="list">Envíos a domicilio 🏠 paga al recibir</p>
+      </ul>      
+      
+      <a class="imagen" href="../index2.html"
+        ><img src="./gorras.png" width="245" height="190" alt=""
+      /></a>
+    </div>
+    <div class="item">
+      <ul class="lista">
+        <h3 class="list">Camiseta Deportiva licra</h3>
+        <p class="list">Valor $130.000</p>
+        <p class="list">Talla Disponible 18,12,24</p>
+        <p class="list">Envíos a domicilio 🏠 paga al recibir</p>
+      </ul>      
+          
+      <a class="imagen" href=""
+        ><img
+          src="./camisadeportiva.png"
+          width="245"
+          height="190"
+          alt=""
+      /></a>
+    </div>
+    <div class="item">
+      <ul class="lista">
+        <h3 class="list">Conjunto Deportivo</h3>
+        <p class="list">Valor $180.000</p>
+        <p class="list">Talla Disponible 18,12,24</p>
+        <p class="list">Envíos a domicilio 🏠 paga al recibir</p>
+      </ul> 
+      
+      <a class="imagen" href=""
+        ><img
+          src="./conjunto1.png"
+          width="245"
+          height="190"
+          alt=""
+      /></a>
+    </div>
+    <div class="item">
+      <ul class="lista">
+        <h3 class="list">Short Deportivo</h3>
+        <p class="list">Valor $180.000</p>
+        <p class="list">Talla Disponible 18,12,24</p>
+        <p class="list">Envíos a domicilio 🏠 paga al recibir</p>
+      </ul>          
+      <a class="imagen" href=""
+        ><img
+          src="./short.png"
+          width="245"
+          height="190"
+          alt=""
+      /></a>
+  </div> -->
+

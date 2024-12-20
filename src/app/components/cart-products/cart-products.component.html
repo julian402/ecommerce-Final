@@ -1,0 +1,25 @@
+<section class="containerCart">
+  <div>
+    <img [src]="product?.images?.[0]" alt="" />
+  </div>
+  <div>
+    <h2>{{ product?.name }}</h2>
+    <p>{{ product?.price | currency }}</p>
+
+    <div class="buttonCarts">
+      <div class="buttonQuanty">
+        <button (click)="decrement(product._id)">-</button>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          [formControl]="cartQuantity"
+        />
+        <button (click)="increment(product._id)">+</button>
+      </div>
+      <button class="buttonDelete" (click)="delete(product._id)">
+        <i class="fas fa-solid fa-trash"></i>
+      </button>
+    </div>
+  </div>
+</section>
