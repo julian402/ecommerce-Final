@@ -10,17 +10,17 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 
-// describe('CheckoutComponent Test', () => {
-//   let component: CheckoutComponent;
-//   let fixture: ComponentFixture<CheckoutComponent>;
-//   let cartServiceSpy: jasmine.SpyObj<CartService>;
-//   let orderServiceSpy: jasmine.SpyObj<OrdenService>;
-//   let routerSpy: jasmine.SpyObj<Router>;
+describe('CheckoutComponent Test', () => {
+  let component: CheckoutComponent;
+  let fixture: ComponentFixture<CheckoutComponent>;
+  let cartServiceSpy: jasmine.SpyObj<CartService>;
+  let orderServiceSpy: jasmine.SpyObj<OrdenService>;
+  let routerSpy: jasmine.SpyObj<Router>;
 
-//   const paymentDetails = {
-//     address: 'Calle 1254',
-//     paymentMethod: 'credit-card',
-//   };
+  const paymentDetails = {
+    address: 'Calle 1254',
+    paymentMethod: 'credit-card',
+  };
 
   const isVisibleSubject = new BehaviorSubject<boolean>(false);
 
