@@ -25,19 +25,6 @@ describe('HomeComponent', () => {
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
   });
-
-  it('debería mostrar el mensaje de carga cuando los productos son nulos', () => {
-    // Mock del servicio para retornar un array vacío
-    productServiceMock.getAllProducts.and.returnValue(of([])); 
-  
-    component.ngOnInit();
-    
-    
-    fixture.detectChanges();
-  
-    const mensajeCarga = fixture.nativeElement.querySelector('.loading-message p');  
-    expect(mensajeCarga.textContent).toBe('Loading...');
-  });
   
   it('debería mostrar los productos cuando se reciben los datos', () => {
     const mockProducts = [

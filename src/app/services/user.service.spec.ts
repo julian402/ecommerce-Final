@@ -52,7 +52,7 @@ describe('UserService', () => {
       expect(response).toEqual(mockResponse);
     });
 
-    const req = httpMock.expectOne('http://localhost:3000/api/users');
+    const req = httpMock.expectOne('http://54.175.125.154:3000/api/users');
     expect(req.request.method).toBe('POST');
     req.flush(mockResponse);
   });
@@ -65,7 +65,7 @@ describe('UserService', () => {
       expect(response).toEqual(mockLoginResponse);
     });
 
-    const req = httpMock.expectOne('http://localhost:3000/api/login');
+    const req = httpMock.expectOne('http://54.175.125.154:3000/api/login');
     expect(req.request.method).toBe('POST');
     req.flush(mockLoginResponse);
   });
