@@ -33,7 +33,7 @@ describe('ProductServiceTest',()=>{
         )
 
         //Assert - Segundo
-        const req = httpMock.expectOne('http://localhost:3000/api/products');
+        const req = httpMock.expectOne('http://54.175.125.154:3000/api/products');
 
         expect(req.request.method).toBe('GET');
 
@@ -53,7 +53,7 @@ describe('ProductServiceTest',()=>{
         )
 
         //Assert - Segundo
-        const req = httpMock.expectOne('http://localhost:3000/api/products/'+productId);
+        const req = httpMock.expectOne('http://54.175.125.154:3000/api/products/'+productId);
 
         expect(req.request.method).toBe('GET');
 

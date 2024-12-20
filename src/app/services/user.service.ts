@@ -7,23 +7,27 @@ import { Injectable, inject } from '@angular/core';
 })
 export class UserService {
   private http = inject(HttpClient);
-  private document = inject(DOCUMENT);
-  localStorage = this.document.defaultView?.localStorage;
   constructor() {}
 
   register(formData: FormData) {
-    return this.http.post('http://localhost:3000/api/users', formData);
+    return this.http.post('http://54.175.125.154:3000/api/users', formData);
   }
 
   login(datosDelUsuario: { email: string; password: string }) {
-    return this.http.post('http://localhost:3000/api/login', datosDelUsuario);
+    return this.http.post(
+      'http://54.175.125.154:3000/api/login',
+      datosDelUsuario
+    );
   }
 
   isLogged() {
-    if (localStorage.getItem('user_token')) {
-      return true;
-    } else {
-      return false;
+    if (typeof window !== 'undefined' && window.localStorage) {
+      if (localStorage.getItem('user_token')) {
+        return true;
+      } else {
+        return false;
+      }
     }
+    return false
   }
 }

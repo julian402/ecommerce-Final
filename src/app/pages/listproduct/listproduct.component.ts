@@ -13,12 +13,13 @@ import { CartService } from '../../services/cart.service';
 })
 export class ListproductComponent {
   productService = inject(ProductService);
-cartService = inject(CartService);
-
+  cartService = inject(CartService);
   products = signal<null | Product[]>(null);
 
   ngOnInit() {
-    window.scrollTo(0,0)
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
     this.productService.getAllProducts().subscribe({
       next: (response: any) => {
         // console.log(response);
@@ -29,5 +30,4 @@ cartService = inject(CartService);
       },
     });
   }
-
 }

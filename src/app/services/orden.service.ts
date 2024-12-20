@@ -2,6 +2,7 @@ import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import Product from '../../../types/Product';
 import { CartService } from './cart.service';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,7 @@ export class OrdenService {
   private cartService = inject(CartService);
   total = this.cartService.Total;
   products = this.cartService.products;
+
   constructor() {}
 
   createOrder(formData: any) {
@@ -26,7 +28,7 @@ export class OrdenService {
     console.log(productsArray);
 
     return this.http.post(
-      'http://localhost:3000/api/purchaseorder',
+      'http://54.175.125.154:3000/api/purchaseorder',
       {
         products: productsArray,
         amount: this.total(),

@@ -36,7 +36,7 @@ describe("OrdenServiceTest",()=>{
         )
 
         //Assert - Segundo
-        const req = httpMock.expectOne('http://localhost:3000/api/purchaseorder');
+        const req = httpMock.expectOne('http://54.175.125.154:3000/api/purchaseorder');
 
         expect(req.request.method).toBe("POST");
 
