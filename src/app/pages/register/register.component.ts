@@ -36,7 +36,7 @@ export class RegisterComponent {
     password: new FormControl('', {
       validators: [Validators.required],
     }),
-    avatar: new FormControl(null, {
+    avatar: new FormControl<File | null>(null, {
       validators: [Validators.required],
     }),
     typeUser: new FormControl('Customer', {
